@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     matrix = np.random.rand(3,2)
-    return matrix
+    return str(matrix)
 
 
 @app.route("/hello")
