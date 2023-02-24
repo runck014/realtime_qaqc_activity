@@ -26,8 +26,8 @@ def milk_truck_sensor():
     All are randomly nulled 5% of the API calls.
     '''
     
-    lat = np.random.normal(46.7296, 6, 1)[0]
-    lon = np.random.normal(-94, 10, 1)[0]
+    lat = np.random.normal(46.7296, 1, 1)[0]
+    lon = np.random.normal(-94, 1, 1)[0]
     
     now = datetime.now()
     current_time = now.strftime("%D:%H:%M:%S")
