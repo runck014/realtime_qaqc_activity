@@ -1,4 +1,4 @@
-# Real-time QAQC Class Activity
+# Real-time QAQC Class Activity 
 
 This app provides the milk truck sensor endpoint in main.py for deployment on Google Cloud Run.
 
