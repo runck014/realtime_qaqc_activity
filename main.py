@@ -26,33 +26,33 @@ def milk_truck_sensor():
     All are randomly nulled 5% of the API calls.
     '''
     
-    lat = np.random.normal(46.7296, 1, 1)[0]
-    lon = np.random.normal(-94, 1, 1)[0]
+    lat = float(np.random.normal(46.7296, 1, 1)[0])
+    lon = float(np.random.normal(-94, 1, 1)[0])
     
     now = datetime.now()
     current_time = now.strftime("%D:%H:%M:%S")
     
-    air_temperature = np.random.normal(31, 15, 1)[0]
+    air_temperature = float(np.random.normal(31, 15, 1)[0])
     
-    if np.random.uniform(0.0,1.0,1)[0] < 0.05:
-        air_temperature = 'nan'
-
-    if np.random.uniform(0.0,1.0,1)[0] < 0.05:
-        lat = 'nan'
+    if np.random.uniform(0.0, 1.0, 1)[0] < 0.05:
+        air_temperature = None
+    if np.random.uniform(0.0, 1.0, 1)[0] < 0.05:
+        lat = None
         
-    if np.random.uniform(0.0,1.0,1)[0] < 0.05:
-        lon = 'nan'
+    if np.random.uniform(0.0, 1.0, 1)[0] < 0.05:
+        lon = None
     
-    if np.random.uniform(0.0,1.0,1)[0] < 0.05:
+    if np.random.uniform(0.0, 1.0, 1)[0] < 0.05:
         current_time = '01/21/29:15:11:12'
     
     response_dict = {
-        'lat':lat,
-        'lon':lon,
-        'current_time':current_time,
-        'air_temperature':air_temperature}
+        'lat': lat,
+        'lon': lon,
+        'current_time': current_time,
+        'air_temperature': air_temperature
+    }
     
-    return json.dumps(response_dict)
+    return json.dumps(response_dict, allow_nan=True)
 
 
 if __name__ == "__main__":
