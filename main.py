@@ -53,7 +53,7 @@ def milk_truck_sensor():
     }
     
     return json.dumps(response_dict, allow_nan=True)
-
+ 
 @app.route("/5572/milk_truck_sensor_geojson")
 def milk_truck_sensor():
     '''
