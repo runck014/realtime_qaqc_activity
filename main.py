@@ -61,18 +61,14 @@ def milk_truck_sensor():
     Lat, lon, current time, and temperature sensor data are randomly nulled 5% of the API calls.
     '''
     
-    # Generate location data
     lat = float(np.random.normal(46.7296, 1, 1)[0])
     lon = float(np.random.normal(-94, 1, 1)[0])
     
-    # Generate timestamp
     now = datetime.now()
     current_time = now.strftime("%D:%H:%M:%S")
     
-    # Generate temperature data
     air_temperature = float(np.random.normal(31, 15, 1)[0])
     
-    # Randomly null data (5% chance for each)
     if np.random.uniform(0.0, 1.0, 1)[0] < 0.05:
         air_temperature = None
     if np.random.uniform(0.0, 1.0, 1)[0] < 0.05:
